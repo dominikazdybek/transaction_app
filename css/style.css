@@ -1,0 +1,44 @@
+html, body {
+	margin: 20px;
+}
+
+body {
+    background-color:#e0ecff; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.app-container {
+	max-width: 800px;
+	width: 100%;
+	padding: 25px;
+	
+	background: rgba(255, 255, 255, 0.7);
+	box-shadow: 0 0 62px rgba(0,0,0,0.1);
+}
+
+.largest-transaction {
+    margin: 5px; 
+    padding: 1px;
+}
+
+.single-transaction {
+    margin-bottom: 12px;
+    padding: 5px;
+}
+
+.transaction-container ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+h3, h6 {
+    margin-left: 10px;
+}
+
+.sum {
+    display:block; 
+    text-align:right;
+}

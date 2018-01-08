@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="app-container">
+        <nav class="navbar navbar-right">
+            <form class="form-inline">
+                <label for="euro-converter">1 EURO = </label>
+                <div class="form-group">
+                    <input id="converter" class="form-control" type="number" step="0.01">
+                </div>
+            </form>
+        </nav>
+        <section class="new-transaction">
+            <div class="row">
+                <h3>Add new transaction</h3>
+                <form class="form-group">
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" id="title" placeholder="Title">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="number" step="0.01" class="form-control" id="amount" placeholder="Euro">
+                    </div>
+                    <div class="col-xs-2">
+                        <button id="add-transaction" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div id="hide" class="hidden">
+            <section class="transaction-container">
+                <div class="row">
+                <h3>Completed transaction</h3>
+                <ul id="transaction-list">
+                    <div class="largest-transaction alert-info">
+                        <h6>The largest amount transaction:</h6>
+                        <div id="highest">
+                        </div>
+                    </div>
+                </ul>
+                </div>
+            </section>
+            <section class="summary">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-offset-7 col-sm-2">
+                            <label for="sum" class="sum">Sum: </label>
+                        </div>
+                        <div class="col-xs-9 col-xs-2">
+                            <input type="text" class="form-control" id="sum">
+                        </div>
+                    </div>
+                </div> 
+            </section>
+        </div>
+        </div>
+    </main>
+</body>
+    <script src="./js/index.js"></script>
+</html>

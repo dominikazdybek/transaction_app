@@ -15,8 +15,15 @@ $(document).ready(function() {
     var name = $("#title").val();
     var value = $("#amount").val();
 
-    if (isIncorrectForm(name, value)) {
-      alert("Wrong title or value!");
+    if (isIncorrectNameForm(name)) {
+      alert(
+        "Title should have at least 1 character and should not be longer than 40"
+      );
+      return;
+    }
+
+    if (isIncorrectValueForm(value)) {
+      alert("Value should be bigger then 0!");
       return;
     }
 
@@ -46,8 +53,12 @@ $(document).ready(function() {
     changeSum();
   }
 
-  function isIncorrectForm(name, value) {
-    return name.length == 0 || name.length > 100 || value.length == 0;
+  function isIncorrectNameForm(name) {
+    return name.length == 0 || name.length > 40;
+  }
+
+  function isIncorrectValueForm(value) {
+    return value.length == 0 || value == 0;
   }
 
   function shouldListAppear() {
@@ -108,7 +119,8 @@ $(document).ready(function() {
 
   function updateHighestTransactionDOM() {
     var highestTransactionDOM = generateTransactionElement(highestTransaction);
-    $("#highest").html(highestTransactionDOM);
+    var ne = $("#highest").html(highestTransactionDOM);
+    ne.find("button").remove();
   }
 
   function deleteTransactionObject(idToDelete) {
@@ -132,7 +144,13 @@ $(document).ready(function() {
   }
 
   function updateTransactionsPlnDOM() {
-    $(".pln-val").val($(".eur-val").val() * rate);
+    var transactionElems = $("#transaction-list li");
+
+    for (var i = 0; i < transactionElems.length; i++) {
+      var valueEurElem = $(transactionElems[i]).find(".eur-val");
+      var valuePlnElem = $(transactionElems[i]).find(".pln-val");
+      valuePlnElem.val(valueEurElem.val() * rate);
+    }
   }
 
   function generateTransactionElement(transaction) {

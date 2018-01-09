@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <main class="app-container">
         <nav class="navbar navbar-right">
@@ -39,14 +41,15 @@
         <div id="hide" class="hidden">
             <section class="transaction-container">
                 <div class="row">
-                <h3>Completed transaction</h3>
-                <ul id="transaction-list">
-                    <div class="largest-transaction alert-info">
-                        <h6>The largest amount transaction:</h6>
-                        <div id="highest">
+                    <h3>Completed transaction</h3>
+                    <ul id="transaction-list">
+                        <div class="highest-transaction alert-info">
+                            <h6>The highest transaction:</h6>
+                            <div id="highest">
+                            </div>
                         </div>
-                    </div>
-                </ul>
+                        <hr>
+                    </ul>
                 </div>
             </section>
             <section class="summary">
@@ -59,11 +62,12 @@
                             <input type="text" class="form-control" id="sum">
                         </div>
                     </div>
-                </div> 
+                </div>
             </section>
         </div>
         </div>
     </main>
 </body>
-    <script src="./js/index.js"></script>
+<script src="./js/index.js"></script>
+
 </html>

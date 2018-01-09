@@ -119,8 +119,8 @@ $(document).ready(function() {
 
   function updateHighestTransactionDOM() {
     var highestTransactionDOM = generateTransactionElement(highestTransaction);
-    var ne = $("#highest").html(highestTransactionDOM);
-    ne.find("button").remove();
+    $("#highest").html(highestTransactionDOM);
+    $("#highest").find("button").remove();
   }
 
   function deleteTransactionObject(idToDelete) {
@@ -149,7 +149,7 @@ $(document).ready(function() {
     for (var i = 0; i < transactionElems.length; i++) {
       var valueEurElem = $(transactionElems[i]).find(".eur-val");
       var valuePlnElem = $(transactionElems[i]).find(".pln-val");
-      valuePlnElem.val(valueEurElem.val() * rate);
+      valuePlnElem.val((valueEurElem.val() * rate).toFixed(2));
     }
   }
 
@@ -163,7 +163,7 @@ $(document).ready(function() {
       '" readonly>' +
       "</div>" +
       '<div class="col-xs-2">' +
-      '<input type="number" class="form-control eur-val" value="' +
+      '<input class="form-control eur-val" value="' +
       transaction.value.EUR.toFixed(2) +
       '" readonly>' +
       '<small id="eurHelp" class="form-text text-muted">' +
@@ -171,10 +171,10 @@ $(document).ready(function() {
       "</small>" +
       "</div>" +
       '<div class="col-xs-2">' +
-      '<input type="number" class="form-control pln-val" value="' +
+      '<input class="form-control pln-val" value="' +
       transaction.value.PLN.toFixed(2) +
       '" readonly>' +
-      '<small id="eurHelp" class="form-text text-muted">' +
+      '<small id="plnHelp" class="form-text text-muted">' +
       "Value in PLN" +
       "</small>" +
       "</div>" +

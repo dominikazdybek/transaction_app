@@ -22,12 +22,12 @@ body {
 .highest-transaction {
   margin: 5px;
   padding: 1px;
+  padding-bottom: 40px;
 }
 
 .single-transaction {
   margin-bottom: 12px;
   padding: 5px;
-  padding-bottom: 40px;
 }
 
 .transaction-container ul {
@@ -36,12 +36,24 @@ body {
   list-style: none;
 }
 
-h3,
-h6 {
+h3, h6 {
   margin-left: 10px;
 }
 
-.sum {
-  display: block;
-  text-align: right;
+.new-transaction {
+  margin-top: 35px;
+}
+
+#sumHelp, #plnHelp, #eurHelp{
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+#converter {
+	width: 100px;
+}
+
+.converter-form {
+	margin-right: 20px;
 }
